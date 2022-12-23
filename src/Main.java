@@ -6,8 +6,9 @@ public class Main {
         EmpPayrollService service = new EmpPayrollService();
         try {
             service.updateBasePay();
+            service.showAll();
+            service.showByDate();
         } catch (SQLException e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
     }

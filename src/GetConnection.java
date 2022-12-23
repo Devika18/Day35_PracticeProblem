@@ -33,6 +33,5 @@ public class GetConnection {
                 e.printStackTrace();
             }
         }
-
     }
 }

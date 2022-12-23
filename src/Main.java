@@ -11,7 +11,8 @@ public class Main {
             do {
                 System.out.println("Select a option");
                 System.out.println("1. Update BasePay\n2. Retrive all Employees\n3. Retrive Employees who"
-                        + " joined beetween specific dates\n4. Analyse Employee Salary group by gender");
+                        + " joined beetween specific dates\n4. Analyse Employee Salary group by gender\n5. Add Employee"
+                        + "\n6. Exit");
                 option = sc3.nextInt();
                 switch (option) {
                     case 1:
@@ -30,10 +31,14 @@ public class Main {
                         service.analyseEmployeeSalary();
                         break;
 
+                    case 5:
+                        service.addEmployeePayroll();
+                        break;
+
                     default:
                         break;
                 }
-            }while(option != 5);
+            }while(option != 6);
         } catch (SQLException e) {
             e.printStackTrace();
         }

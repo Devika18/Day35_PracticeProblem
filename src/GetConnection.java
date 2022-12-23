@@ -15,7 +15,7 @@ public class GetConnection {
         }
 
         try {
-            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/payroll_service", "root", "1234");
+            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/payroll_service", "root", "SidDevu@18");
             System.out.println("Connection Established");
         } catch (SQLException e) {
             e.printStackTrace();

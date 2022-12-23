@@ -2,6 +2,7 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.Scanner;
 
 public class EmpPayrollService {
     GetConnection connection = new GetConnection();
@@ -31,5 +32,24 @@ public class EmpPayrollService {
         }
 
         connection.closeConnection();
+    }
+
+    public void updateBasePay() throws SQLException {
+        Scanner sc = new Scanner(System.in);
+        Connection conn = connection.getConnection();
+        System.out.println("Enter the employee Name");
+        String name = sc.next();
+        System.out.println("Enter the new BasePay");
+        double basepay = sc.nextDouble();
+        String query = "update employee_payroll set basicpay="+basepay+" where name="+"'"+name+"'";
+        Statement stmt = conn.createStatement();
+        int i = stmt.executeUpdate(query);
+        if(i > 0) {
+            System.out.println("Employee updated successsfully");
+        }
+        sc.close();
+        stmt.close();
+        connection.closeConnection();
+
     }
 }
